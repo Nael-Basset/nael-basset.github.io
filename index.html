@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-light"> <!-- Le mode par défaut est clair -->
+    <header>
+        <div class="logo">Mon Portfolio</div>
+        <button class="toggle-theme" onclick="toggleTheme()">Mode Sombre</button>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h1>Bienvenue sur mon portfolio</h1>
+            <p>Découvrez mes projets et mon parcours.</p>
+        </section>
+
+        <section id="projects">
+            <h2>Mes Projets</h2>
+            <div class="project-card">
+                <h3>Nom du Projet</h3>
+                <p>Description du projet.</p>
+                <img src="image_projet.jpg" alt="Description de l'image du projet">
+            </div>
+            <!-- Ajoutez d'autres cartes de projets ici -->
+        </section>
+
+        <section id="about">
+            <h2>À propos de moi</h2>
+            <p>Parcours scolaire et expériences.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <form>
+                <input type="text" placeholder="Votre nom" required>
+                <input type="email" placeholder="Votre email" required>
+                <textarea placeholder="Votre message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mon Portfolio</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Thème sombre */
+body.theme-dark {
+    --background-color: #202020;
+    --text-color: #FFA500;
+}
+
+/* Thème clair */
+body.theme-light {
+    --background-color: #999999; /* Gris clair */
+    --text-color: #FF8C00; /* Orange plus foncé */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--background-color);
+}
+
+.logo {
+    color: var(--text-color);
+    font-size: 24px;
+}
+
+.toggle-theme {
+    background-color: transparent;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.nav-links {
+    list-style-type: none;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    height: 3px;
+    width: 25px;
+    background-color: var(--text-color);
+    margin: 4px;
+}
+
+main {
+    padding: 20px;
+    background-color: var(--background-color);
+}
+
+h1, h2 {
+    color: var(--text-color);
+}
+
+.project-card {
+    border: 1px solid #797979;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #797979;
+    border-radius: 5px;
+}
+
+/* Formulaire */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    background-color: var(--text-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #757575; /* Une teinte plus foncée pour le survol */
+    color: #00ff00;
+}
+
+/* Menu hamburger pour mobile */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: var(--background-color);
+        width: 100%;
+        top: 50px;
+        left: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
