@@ -29,18 +29,60 @@ header {
     transition: var(--background-color) 0.3s ease;
 }
 
-.logo {
+.titre1 {
     color: var(--text-color);
-    font-size: 24px;
+    font-size: 55px;
 }
 
 .toggle-theme {
-    background-color: transparent;
-    border: none;
-    color: var(--text-color);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
     cursor: pointer;
-    font-size: 16px;
 }
+
+.toggle-theme input {
+    display: none; /* Cacher le checkbox */
+}
+
+.slider {
+    width: 100px;
+    height: 50px;
+    align-items: center;
+    background-color: #ccc;
+    border-radius: 50px;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.slider:before {
+    content: '🌞';
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    padding-top: 5px;
+}
+
+.toggle-theme input:checked + .slider {
+    background-color: var(--text-color); /* Couleur de fond pour le mode sombre */
+}
+
+.toggle-theme input:checked + .slider:before {
+    transform: translateX(60px); /* Déplacement du bouton du slider */
+    content: '🌜';
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Centrer verticalement et horizontalement */
+    font-size: 16px;
+    transition: opacity 0.3s ease;
+}
+
 
 .nav-links {
     list-style-type: none;
