@@ -11,15 +11,33 @@ import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
 import Pill from '../components/Pill.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
+import type { CollectionEntry } from 'astro:content';
+
 
 // Page section components
 import ContactCTA from '../components/ContactCTA.astro';
 import Skills from '../components/Skills.astro';
 
 // Content Fetching: List four most recent work projects
-const projects = (await getCollection('work'))
-	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
-	.slice(0, 4);
+const getProjects = async () => {
+    const allProjects = await getCollection('work');
+    return allProjects
+        .sort((a: CollectionEntry<'work'>, b: CollectionEntry<'work'>) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+        .slice(0, 4);
+};
+
+const projects = [
+  {
+    title: 'Project 1',
+    img: '/assets/project1.jpg',
+    img_alt: 'Project 1 image',
+  },
+  {
+    title: 'Project 2',
+    img: '/assets/project2.jpg',
+    img_alt: 'Project 2 image',
+  },
+];
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
