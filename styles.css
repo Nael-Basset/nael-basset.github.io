@@ -13,7 +13,8 @@ body.theme-dark {
 /* Thème clair */
 body.theme-light {
     --background-color: #999999; /* Gris clair */
-    --text-color: #FF8C00; /* Orange plus foncé */
+    --text-color: #c76d00; /* Orange plus foncé */
+    text-shadow: #202020 1px 1px;
 }
 
 header {
@@ -22,6 +23,10 @@ header {
     align-items: center;
     padding: 10px;
     background-color: var(--background-color);
+}
+
+.header {
+    transition: var(--background-color) 0.3s ease;
 }
 
 .logo {
